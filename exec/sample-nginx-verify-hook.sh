@@ -12,7 +12,7 @@ echo "nginx_bin: $nginx_bin"
 
 file_content=$(echo "$ZEROSSL_HTTP_FV_CONTENT" | tr -d '\r' | awk '{printf "%s\\n", $0}')
 echo "file_content: $file_content"
-cat <<EOF > verify.conf
+cat <<EOF > /etc/nginx/sites-enabled/verify.conf
 server {
     listen $ZEROSSL_HTTP_FV_PORT default_server;
     listen [::]:$ZEROSSL_HTTP_FV_PORT default_server;
